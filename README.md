@@ -1,6 +1,6 @@
 # Tantei
 
-![tantei-logo](./static/img/Tantei.png)
+![tantei-logo](./static/img/tantei-logo.png)
 
 
 ## Activate the virtual environment
