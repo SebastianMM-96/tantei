@@ -10,17 +10,17 @@ app = Flask(
 )
 
 # Home page
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 # App page
-@app.route('/tantei')
+@app.route('/tantei', methods=['GET'])
 def tantei():
     return render_template('tantei.html')
 
 # Prediction
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     message = request.form['message']
     myPrediction = mlModel.predict([message])
