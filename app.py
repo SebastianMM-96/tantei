@@ -20,7 +20,7 @@ def tantei():
     return render_template('tantei.html')
 
 # Prediction
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
     message = request.form['message']
     myPrediction = mlModel.predict([message])
