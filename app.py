@@ -9,6 +9,9 @@ app = Flask(
     template_folder='templates'
 )
 
+# Load the model
+mlModel = pickle.load(open('models/nbModel.pkl', 'rb'))
+
 # Home page
 @app.route('/', methods=['GET'])
 def index():
@@ -28,6 +31,6 @@ def predict():
 
 # Run the app
 if __name__== '__main__':
-    mlModel = pickle.load(open('models/nbModel.pkl', 'rb'))
     # Run the app
-    app.run(debug = True)
+    # app.run(debug = True)
+    app.run()
