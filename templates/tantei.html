@@ -10,6 +10,11 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/tantei.css")}}">
+    <script>
+        function goBack(){
+            window.location.reload(true);
+        }
+    </script>
     <!--Add link-->
     <link rel="icon" type="image/png" sizes="192x192" href="{{url_for('static', filename='img/logo192.png')}}">
     <title>Tantei | 探偵</title>
@@ -17,22 +22,22 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Tantei | 探偵</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="/">Tantei | 探偵</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/tantei">Try again</a>
-                </li>
-            </ul>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
     <div class="container-fluid">
         <h2 class="text-center">News classification using ML</h2>
@@ -40,11 +45,12 @@
 
     <div class="container">
         <form action="{{url_for('predict')}}" method="POST">
-            <label for="message">Type text news</label>
-            <textarea id="message" name="message" placeholder="Write the news.." style="height:200px"
+            <label for="message">Enter a news</label>
+            <textarea id="message" name="message" placeholder="Paste the text of the news here..." style="height:200px"
                 required></textarea>
             <div class="text-center">
-                <button type="submit" class="btn btn-lg btn-success" value="predict">Predict</button>
+                <button type="submit" class="btn btn-md btn-success" value="predict">Predict</button>
+                <button type="button" class="btn btn-md btn-warning" onclick="goBack()">Try again</button>
             </div>
         </form>
     </div>
@@ -54,11 +60,13 @@
         {% if prediction  == 1 %}
         <div class="alert alert-success text-center">
             <strong><i class="far fa-check-circle"></i></strong> Great, the news is real.
+            <p>Probability of <strong>{{accuracy}}</strong></p>
         </div>
 
         {% elif prediction == 0 %}
         <div class="alert alert-danger text-center">
             <strong><i class="fas fa-robot"></i></strong> Be careful, this news turned out to be false. Check your sources.
+            <p>Probability of <strong>{{accuracy}}</strong></p>
         </div>
         
         {% endif %}
@@ -72,7 +80,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>

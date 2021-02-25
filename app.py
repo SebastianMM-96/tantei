@@ -1,5 +1,7 @@
 from flask import Flask, render_template, url_for, request
 import pickle
+import numpy as np
+import re
 
 # Set the flask app
 app = Flask(
@@ -9,8 +11,14 @@ app = Flask(
     template_folder='templates'
 )
 
+
+
 # Load the model
 mlModel = pickle.load(open('models/nbModel.pkl', 'rb'))
+# Tfidf algorithm
+tfidf = pickle.load(open('models/tfidf.pkl', 'rb'))
+# CountVectorizer algorithm
+countVec = pickle.load(open('models/countVectorizer.pkl', 'rb'))
 
 # Home page
 @app.route('/', methods=['GET'])
@@ -27,7 +35,9 @@ def tantei():
 def predict():
     message = request.form['message']
     myPrediction = mlModel.predict([message])
-    return render_template('tantei.html', prediction = myPrediction)
+    probability = np.amax(myPrediction)
+    probability = format(probability, ".2%")
+    return render_template('tantei.html', prediction = myPrediction, accuracy = probability)
 
 # Run the app
 if __name__== '__main__':

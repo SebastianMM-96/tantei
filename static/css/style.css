@@ -187,3 +187,47 @@ p{
 .services .box p{
     color: #111;
 }
+
+.contact {
+    background: #000;
+}
+
+.contact h3,
+.contact p {
+    color: #fff;
+}
+
+.sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.sci ul {
+    display: flex;
+}
+
+.sci ul li {
+    list-style: none;
+}
+
+.sci ul li a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+
+.sci ul li a img {
+    filter: invert(0);
+    max-width: 40px;   
+}
+
+.sci ul li a:hover img {
+    opacity: 0.5;
+}
+
+.copyright a {
+    color: #fff;
+}

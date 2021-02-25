@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/style.css")}}">
     <!--Add link-->
+    <script src="https://use.fontawesome.com/3472973aa5.js"></script>
     <link rel="icon" type="image/png" sizes="192x192" href="{{url_for('static', filename='img/logo192.png')}}">
     <title>Tantei | 探偵</title>
 </head>
@@ -18,6 +19,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="/tantei">Try it</a></li>
             <li><a href="#info">Info</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
 
@@ -39,7 +41,7 @@
         </div>
     </section>
 
-    <section class="sec" id="info">
+    <section class="sec contact" id="info">
         <div class="content">
             <div class="mxw800p">
                 <h3>Info</h3>
@@ -92,7 +94,21 @@
     </section>
 
     <!--Footer section-->
-
+    <section class="sec" id="contact">
+        <div class="content">
+            <div class="mxw800p">
+                <h3>Contact us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <!--Buttons-->
+            <div class="sci">
+                <ul>
+                    <li><a href=""><img src="{{url_for('static', filename='img/GitHub.png')}}" alt="github-logo"></a></li>
+                </ul>
+            </div>
+            <p class="copyright">Design & Developed by <a href="">Sebastián Marroquín</a></p>
+        </div>
+    </section>
 
     <script type="text/javascript">
         window.addEventListener("scroll", function(){
