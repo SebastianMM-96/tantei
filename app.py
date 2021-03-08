@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 import pickle
 import numpy as np
+import pandas as pd
 import re
 
 # Set the flask app
@@ -10,8 +11,6 @@ app = Flask(
     static_folder='static',
     template_folder='templates'
 )
-
-
 
 # Load the model
 mlModel = pickle.load(open('models/nbModel.pkl', 'rb'))
@@ -33,11 +32,19 @@ def tantei():
 # Prediction
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    message = request.form['message']
-    myPrediction = mlModel.predict([message])
-    probability = np.amax(myPrediction)
-    probability = format(probability, ".2%")
-    return render_template('tantei.html', prediction = myPrediction, accuracy = probability)
+    if request.method == 'POST':
+
+        message = request.form['message']
+        myPrediction = mlModel.predict([message])
+
+        probability = mlModel.predict_proba([message])
+
+        maxProba = np.amax(probability)
+        maxProba = format(maxProba, ".2%")
+
+        print(maxProba)
+    
+    return render_template('tantei.html', prediction = myPrediction, accuracy = maxProba)
 
 # Run the app
 if __name__== '__main__':

@@ -34,7 +34,8 @@
                 <!--Place Tantei logo image-->
                 <img src="{{url_for('static', filename='img/Tantei.png')}}" alt="Tantei"/>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nihil molestias eius repellendus, fugit quia inventore sint. Illo culpa, fugit sunt doloremque pariatur harum? Quas sapiente laborum aliquam ducimus sint.
+                    Tantei is a website designed to detect fake news of your interest. 
+                    To test it press the button and try the magic.
                 </p>
                 <a href="/tantei" class="btn">Try it</a>
             </div>
@@ -46,46 +47,63 @@
             <div class="mxw800p">
                 <h3>Info</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nihil molestias eius repellendus, fugit quia inventore sint. Illo culpa, fugit sunt doloremque pariatur harum? Quas sapiente laborum aliquam ducimus sint.
+                    To learn more about the development of the project, you can visit the content in the following links
                 </p>
                 <div class="services">
                     <div class="box">
                         <div class="iconBx">
-                            <img src="{{url_for('static', filename='img/pythonLogo.png')}}" alt="Python">
+                            <img src="{{url_for('static', filename='img/python-logo.png')}}" width="100" height="100" alt="Python">
                         </div>
                         <div class="content">
-                            <h2>Model</h2>
+                            <h2>Tools</h2>
                             <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Quidem cupiditate magni, unde ullam necessitatibus distinctio 
-                                id blanditiis molestiae delectus optio recusandae ea. 
+                                Some of the tools we used for the development of our 
+                                website as well as the classifier were: 
+                                Python, Flask and the scikit-learn library.
                             </p>
+                            <a href="https://github.com/SebastianMM-96/tantei" target="_blank" class="btn">View More</a>
                         </div>
                     </div>
                     <div class="box">
                         <div class="iconBx">
-                            <img src="{{url_for('static', filename='img/database.png')}}" alt="Python">
+                            <img src="{{url_for('static', filename='img/database.png')}}" alt="Dataset">
                         </div>
                         <div class="content">
-                            <h2>Data</h2>
+                            <h2>Dataset</h2>
                             <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Quidem cupiditate magni, unde ullam necessitatibus distinctio 
-                                id blanditiis molestiae delectus optio recusandae ea. 
+                                The dataset was retrieved from Kaggle. 
+                                This dataset consists of two files of type CSV, which contain types of 
+                                real news and fake news respectively.
                             </p>
+                            <a href="https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset" target="_blank" class="btn">View More</a>
                         </div>
                     </div>
                     <div class="box">
                         <div class="iconBx">
-                            <img src="{{url_for('static', filename='img/jupyterLogo.png')}}" alt="Python">
+                            <img src="{{url_for('static', filename='img/jupyterLogo.png')}}" alt="Jupyter">
                         </div>
                         <div class="content">
-                            <h2>Analysis</h2>
+                            <h2>Machine Learning Model</h2>
                             <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Quidem cupiditate magni, unde ullam necessitatibus distinctio 
-                                id blanditiis molestiae delectus optio recusandae ea. 
+                                We create a fake news classifier using NLP 
+                                techniques and machine learning models.
+                                Some of the models implemented were: 
+                                logistic regression, decision trees, naïve bayes, etc.
                             </p>
+                            <a href="https://github.com/SebastianMM-96/fake-news/blob/main/fake-news-models/fake_news_classifier.ipynb" target="_blank" class="btn">View More</a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="iconBx">
+                            <img src="{{url_for('static', filename='img/documentation.png')}}" alt="Documentation">
+                        </div>
+                        <div class="content">
+                            <h2>Documentation</h2>
+                            <p>
+                                Part of the documentation for this 
+                                work is written in Spanish, but it will be stored in a GitHub repository.
+                            </p>
+                            <a href="#" class="btn">View More</a>
                         </div>
                     </div>
                 </div>
@@ -97,16 +115,16 @@
     <section class="sec" id="contact">
         <div class="content">
             <div class="mxw800p">
-                <h3>Contact us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h3>Follow us</h3>
+                <p>For more information visit the repository that we have dedicated to this project.</p>
             </div>
             <!--Buttons-->
             <div class="sci">
                 <ul>
-                    <li><a href="https://github.com/SebastianMM-96/tantei"><img src="{{url_for('static', filename='img/GitHub.png')}}" alt="github-logo"></a></li>
+                    <li><a href="https://github.com/SebastianMM-96/tantei" target="_blank"><img src="{{url_for('static', filename='img/GitHub.png')}}" alt="github-logo"></a></li>
                 </ul>
             </div>
-            <p class="copyright">Design & Developed by <a href="https://github.com/SebastianMM-96/tantei">Sebastián Marroquín</a></p>
+            <p class="copyright">Design & Developed by <a href="https://github.com/SebastianMM-96" target="_blank">Sebastián Marroquín</a></p>
         </div>
     </section>
 
